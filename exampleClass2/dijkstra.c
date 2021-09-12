@@ -4,7 +4,6 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include "utilities.c"
 
 int minDistance(int dist[], bool isRelaxed[], int size)
 {
@@ -55,26 +54,19 @@ void dijkstra(int** graph, int source, int size)
                 dist[v] = dist[u] + graph[u][v];
     }
 
-    printSolution(dist, size);
+    // printSolution(dist, size);
 }
 
-int main()
-{
-    printf("Enter number of vertices: \n");
-    int size;
-    scanf("%i", &size);
-    int** graph = generateGraph(10);
-    // int graph[V][V] = {{0, 4, 0, 0, 0, 0, 0, 8, 0},
-    //                    {4, 0, 8, 0, 0, 0, 0, 11, 0},
-    //                    {0, 8, 0, 7, 0, 4, 0, 0, 2},
-    //                    {0, 0, 7, 0, 9, 14, 0, 0, 0},
-    //                    {0, 0, 0, 9, 0, 10, 0, 0, 0},
-    //                    {0, 0, 4, 14, 10, 0, 2, 0, 0},
-    //                    {0, 0, 0, 0, 0, 2, 0, 1, 6},
-    //                    {8, 11, 0, 0, 0, 0, 1, 0, 7},
-    //                    {0, 0, 2, 0, 0, 0, 6, 7, 0}};
-    clock_t t = clock();
-    dijkstra(graph, 0, size);
-    t = t-clock();
-    printf("time taken %f\n", (double)t);
-}
+// int main()
+// {
+//     printf("Enter number of vertices: \n");
+//     int size;
+//     scanf("%i", &size);
+//     int** graph = generateGraph(size);
+
+
+//     clock_t t = clock();
+//     dijkstra(graph, 0, size);
+//     t = clock()-t;
+//     printf("time taken %f\n", (double)t);
+// }
