@@ -140,8 +140,7 @@ struct MinHeap* createMinHeap(int capacity) //capacity is infact the number of v
 // A utility function to swap first node of arrays a and b
 // Needed for min heapify
 void swapMinHeapNode(struct MinHeapNode** a,
-					struct MinHeapNode** b)
-{
+					struct MinHeapNode** b){
 	struct MinHeapNode* t = *a; 
 	*a = *b; 
 	*b = t; 
@@ -237,7 +236,6 @@ void decreaseKey(struct MinHeap* minHeap,
 		minHeap->pos[minHeap->array[(i-1)/2]->v] = i;
 		swapMinHeapNode(&minHeap->array[i],
 				&minHeap->array[(i - 1) / 2]);
-
 		// move to parent index
 		i = (i - 1) / 2;
 	}

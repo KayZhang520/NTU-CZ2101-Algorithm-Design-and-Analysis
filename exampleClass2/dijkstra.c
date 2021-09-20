@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 
-int minDistance(int dist[], bool isRelaxed[], int size)
+int minDistance(int dist[], bool isRelaxed[], int size)//this is a O(V) operation
 {
     //finds the vertice with shortest path to root, returns its index
     int min = INT_MAX, min_index;
