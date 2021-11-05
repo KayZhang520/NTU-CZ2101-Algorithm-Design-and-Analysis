@@ -1,8 +1,7 @@
-#not working:(
+#code is not working
 
 #function to efficiently hash a substring
 def hash(Txt, m, d, q):
-    q = 7
     h = ord(Txt[0])%q
     for x in range(1,m):
         h = (h*d+ord(Txt[x]))%q
@@ -28,7 +27,9 @@ def RKscan(P,T):
         dM = (dM*d)%q
     hp = hash(P,m,d,q) 
     ht = hash(T,m,d,q) #starting substring hash value whr i = 0
-    for j in range(0,n-m):
+    for j in range(0,(n+1)-m+1):
+        print("hash value at index ", j, ": ",ht)
+
         if(hp==ht and P==T[j:j+m]):
             return j
         ht = rehash(T,j,m,ht,q,d)
