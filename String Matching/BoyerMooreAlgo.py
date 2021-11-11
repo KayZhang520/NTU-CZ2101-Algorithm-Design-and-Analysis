@@ -27,25 +27,20 @@ def search(txt, pat):
 	m = len(pat)
 	n = len(txt)
 
-	# create the bad character list by calling
-	# the preprocessing function badCharHeuristic()
-	# for given pattern
+	# create the bad character list by calling sub function
 	badChar = badCharHeuristic(pat, m)
 
 	# s is shift of the pattern with respect to text
 	s = 0
-	while(s <= n-m):
+	while(s <= n-m): 
 		j = m-1
 
-		# Keep reducing index j of pattern while
-		# characters of pattern and text are matching
-		# at this shift s
+		# use j to check if pattern exist at txt[s]
 		while j>=0 and pat[j] == txt[s+j]:
 			j -= 1
 
-		# If the pattern is present at current shift,
-		# then index j will become -1 after the above loop
-		if j<0:
+		# if matched j becomes -1
+		if j==-1:
 			print("Pattern occur at shift = {}".format(s))
 
 			'''
@@ -67,9 +62,9 @@ def search(txt, pat):
 			s += max(1, j-badChar[ord(txt[s+j])])
 
 
-# Driver program to test above function
+# Driver program to test a bove function
 def main():
-	txt = "ABAAABCD"
+	txt = "ABAAABCDABC"
 	pat = "ABC"
 	search(txt, pat)
 
